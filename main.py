@@ -41,7 +41,9 @@ def menu():
 
 def display_herbs():
     clear()
-    df = pd.DataFrame.from_dict(dispensary_items)
+    df= pd.read_csv('terminal_app_assig\inventory.csv')
+    # df = pd.DataFrame.from_dict(dispensary_items)
+    # df.to_csv('inventory.csv', index=False, header= True)
     print('')
     print('')
     print('Full Inventory')
@@ -68,4 +70,5 @@ def update_herbs():
 def prescribe():
     pass
 
+clear()
 menu()
