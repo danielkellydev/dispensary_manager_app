@@ -2,10 +2,8 @@ import pandas as pd
 import os
 clear = lambda: os.system('cls')
 
-dispensary_items = { 
-                "Herb": ["bai zhu", "fu ling", "zhi gan cao", "huang qin", "fu zi", "huang lian", "gan jiang", "ren shen", "ban xia", "bai shao", "gui zhi", "da zao"],
-                "Grams": [324, 220, 110, 90, 65, 454, 245, 500, 600, 300, 200, 250]
-                    }
+
+
 
 
 
@@ -41,9 +39,7 @@ def menu():
 
 def display_herbs():
     clear()
-    df= pd.read_csv('terminal_app_assig\inventory.csv')
-    # df = pd.DataFrame.from_dict(dispensary_items)
-    # df.to_csv('inventory.csv', index=False, header= True)
+    df= pd.read_csv('inventory.csv')
     print('')
     print('')
     print('Full Inventory')
@@ -58,14 +54,20 @@ def display_low_herbs():
     print("---------------")
     print ('')
     
-    df = pd.DataFrame.from_dict(dispensary_items)
-    low_herbs = df.loc[df["Grams"] <100]
+    df = df= pd.read_csv('inventory.csv')
+    low_herbs = df[(df['Grams'] < 100)]
     print (low_herbs)
     print ('')
     print ('')
 
 def update_herbs():
-    pass
+    df = pd.read_csv('inventory.csv', index_col='Herb')
+    herb_to_change= input("Herb to update: ")
+    new_grams= input("Enter updated grams: ")
+    df.loc [herb_to_change, 'Grams'] = new_grams
+    df.to_csv("inventory.csv")
+
+    print(df)
 
 def prescribe():
     pass
