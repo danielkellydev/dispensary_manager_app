@@ -3,9 +3,6 @@ import os
 clear = lambda: os.system('cls')
 
 
-
-
-
 def menu():
     clear()
     print("============= Dispensary Manager ============")
@@ -57,10 +54,11 @@ def display_low_herbs():
     print ('')
 
 def update_herbs():
+    clear()
     while True:
         df = pd.read_csv('inventory.csv', index_col='Herb')
         df_to_list= pd.DataFrame(df).index.tolist()
-
+        
         herb_to_change= input("Herb to update: ")
         
         if herb_to_change in df_to_list:
@@ -72,8 +70,6 @@ def update_herbs():
         else:
             print("Incorrect input!")
             
-       
-        
         
        
 def prescribe():
