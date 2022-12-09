@@ -6,10 +6,6 @@ clear = lambda: os.system('cls')
 
 
 
-
-
-
-
 def menu():
     clear()
     print("============= Dispensary Manager ============")
@@ -19,7 +15,7 @@ def menu():
         print("2) Display low stock items")
         print("3) Update herb inventory")
         print("4) Prescribe formula")
-        print("5) Exit")
+        print("5) Exit/Go back")
         print('')
         print("Enter Your Choice :- ")
 
@@ -61,14 +57,25 @@ def display_low_herbs():
     print ('')
 
 def update_herbs():
-    df = pd.read_csv('inventory.csv', index_col='Herb')
-    herb_to_change= input("Herb to update: ")
-    new_grams= input("Enter updated grams: ")
-    df.loc [herb_to_change, 'Grams'] = new_grams
-    df.to_csv("inventory.csv")
+    while True:
+        df = pd.read_csv('inventory.csv', index_col='Herb')
+        df_to_list= pd.DataFrame(df).index.tolist()
 
-    print(df)
-
+        herb_to_change= input("Herb to update: ")
+        
+        if herb_to_change in df_to_list:
+            new_grams= input("Enter updated grams: ")
+            df.loc [herb_to_change, 'Grams'] = new_grams
+            df.to_csv("inventory.csv")
+        elif herb_to_change == '5':
+            break
+        else:
+            print("Incorrect input!")
+            
+       
+        
+        
+       
 def prescribe():
     pass
 
