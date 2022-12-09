@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import formulas
 clear = lambda: os.system('cls')
 
 
@@ -73,7 +74,12 @@ def update_herbs():
         
        
 def prescribe():
-    pass
+    df = pd.read_csv('inventory.csv', index_col='Herb')
+    df_to_list= pd.DataFrame(df).index.tolist()
+    for i in formulas.li_zhong_wan:
+        if i in df_to_list:
+            df.loc [i, 'Grams'] = (df.loc [i, 'Grams']) - (formulas.li_zhong_wan[i])
+            df.to_csv("inventory.csv")
 
 clear()
 menu()
