@@ -86,28 +86,34 @@ def prescribe():
     print("7) Da Xuan Wu Tang")
     print("Enter Your Choice :- ")
 
-    n = int(input())
-    if (n == 1):
-        formula= formulas.lzw
-    elif(n == 2):
-        formula= formulas.bxxxt
-    elif(n == 3):
-        formula= formulas.zwt
-    elif(n == 4):
-        formula= formulas.fzt
-    elif (n == 5):
-        formula= formulas.lgzgt
-    elif (n == 6):
-        formula= formulas.szt
-    elif (n == 7):
-        formula= formulas.dxwt
-    else:
-        print ('')
-        print("--------------------------------")
-        print("Invalid Choice, please try again.")
-        print("--------------------------------")
-        print('')
-
+    try:
+        n = int(input())
+        if (n == 1):
+            formula= formulas.lzw
+        elif(n == 2):
+            formula= formulas.bxxxt
+        elif(n == 3):
+            formula= formulas.zwt
+        elif(n == 4):
+            formula= formulas.fzt
+        elif (n == 5):
+            formula= formulas.lgzgt
+        elif (n == 6):
+            formula= formulas.szt
+        elif (n == 7):
+            formula= formulas.dxwt
+        else:
+            print ('')                  
+            print("--------------------------------")
+            print("Invalid Choice, please try again.")
+            print("--------------------------------")
+            print('')
+    except ValueError:
+            print ('')                  
+            print("--------------------------------")
+            print("Invalid Choice, please try again.")
+            print("--------------------------------")
+            print('')
 
 
     df_to_list= pd.DataFrame(df).index.tolist()
