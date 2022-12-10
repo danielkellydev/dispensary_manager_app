@@ -75,10 +75,45 @@ def update_herbs():
        
 def prescribe():
     df = pd.read_csv('inventory.csv', index_col='Herb')
+    formula = ''
+    clear()
+    print("1) Li Zhong Wan")
+    print("2) Ban Xia Xie Xin Tang")
+    print("3) Zhen Wu Tang")
+    print("4) Fu Zi Tang")
+    print("5) Ling Gui Zhu Gan Tang")
+    print("6) Shen Zhuo Tang")
+    print("7) Da Xuan Wu Tang")
+    print("Enter Your Choice :- ")
+
+    n = int(input())
+    if (n == 1):
+        formula= formulas.lzw
+    elif(n == 2):
+        formula= formulas.bxxxt
+    elif(n == 3):
+        formula= formulas.zwt
+    elif(n == 4):
+        formula= formulas.fzt
+    elif (n == 5):
+        formula= formulas.lgzgt
+    elif (n == 6):
+        formula= formulas.szt
+    elif (n == 7):
+        formula= formulas.dxwt
+    else:
+        print ('')
+        print("--------------------------------")
+        print("Invalid Choice, please try again.")
+        print("--------------------------------")
+        print('')
+
+
+
     df_to_list= pd.DataFrame(df).index.tolist()
-    for i in formulas.li_zhong_wan:
+    for i in formula:
         if i in df_to_list:
-            df.loc [i, 'Grams'] = (df.loc [i, 'Grams']) - (formulas.li_zhong_wan[i])
+            df.loc [i, 'Grams'] = (df.loc [i, 'Grams']) - (formula[i])
             df.to_csv("inventory.csv")
 
 clear()
