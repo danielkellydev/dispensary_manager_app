@@ -36,6 +36,7 @@ def display_herbs():
     df= pd.read_csv('inventory.csv')
     print('')
     print('')
+    print('--------------')
     print('Full Inventory')
     print('--------------')
     print(df)
@@ -44,13 +45,16 @@ def display_herbs():
 def display_low_herbs():
     clear()
     print ('')
+    print("---------------")
     print("Low Stock Items")
     print("---------------")
     print ('')
     
-    df = df= pd.read_csv('inventory.csv')
+    df= pd.read_csv('inventory.csv')
     low_herbs = df[(df['Grams'] < 100)]
-    print (low_herbs)
+    print(low_herbs.to_string (index=False))
+    # print(df.to_string(index=False))
+    # print (low_herbs)
     print ('')
     print ('')
 
@@ -86,8 +90,12 @@ def prescribe():
     print("7) Da Xuan Wu Tang")
     print("Enter Your Choice :- ")
 
-    try:
+    try: 
         n = int(input())
+        for i in formula:
+            for j in df:
+                if j < i:
+                    print (f"Not enough {formula[i]}")
         if (n == 1):
             formula= formulas.lzw
         elif(n == 2):
