@@ -4,7 +4,7 @@ import formulas
 import functions
 clear = lambda: os.system('cls')
 
-
+# function for displaying menu
 def menu():
     clear()
     print("============= Dispensary Manager ============")
@@ -32,6 +32,7 @@ def menu():
         else:
             print("Invalid Choice, please try again")
 
+# function to print full inventory from csv file
 def display_herbs():
     clear()
     df= pd.read_csv('inventory.csv')
@@ -43,6 +44,7 @@ def display_herbs():
     print(df.to_string (index=False))
     print('')
 
+# function to display any herbs in the dispensary whose grams is below 100
 def display_low_herbs():
     clear()
     print ('')
@@ -51,21 +53,32 @@ def display_low_herbs():
     print("---------------")
     print ('')
     
+    #uses pandas to read csv file, then recognises any herbs below 100 
     df= pd.read_csv('inventory.csv')
     low_herbs = df[(df['Grams'] < 100)]
-    print(low_herbs.to_string (index=False))
-    print ('')
-    print ('')
+    # if the dataframe is empty, a friendly message is displayed (as opposed to default empty dataframe message)
+    if low_herbs.empty:
+        print ('')
+        print ("You're all stocked up!")
+        print ('')
+    else:
+        print(low_herbs.to_string (index=False))
+        print ('')
+        print ('')
 
+# function to edit grammage value of herbs in csv file
 def update_herbs():
     clear()
     while True:
+        # using pandas to read csv
         df = pd.read_csv('inventory.csv', index_col='Herb')
+        # transpose csv data into a pandas DataFrame, then into a list
         df_to_list= pd.DataFrame(df).index.tolist()
         
         herb_to_change= input("Herb to update: ")
         herb_to_change= herb_to_change.capitalize()
         
+        # if loop checks if above herb_to_change input is located within the df_to_list list
         if herb_to_change in df_to_list:
             new_grams= input("Enter updated grams: ")
             df.loc [herb_to_change, 'Grams'] = new_grams
@@ -79,7 +92,7 @@ def update_herbs():
             print("Incorrect input!")
             
         
-       
+    #    function to prescribe herbal formulas
 def prescribe():
     df = pd.read_csv('inventory.csv', index_col='Herb')
     formula = ''
@@ -92,7 +105,7 @@ def prescribe():
     print("6) Shen Zhuo Tang")
     print("7) Da Xuan Wu Tang")
     print("Formula to prescribe :- ")
-
+# error handling in case a non-integer is inputted
     try: 
         n = int(input())
         if (n == 1):
@@ -133,7 +146,8 @@ def prescribe():
     print ('')
     
 
-
+# this code takes the values of individual herbs within prescribed formula, check them against same herb names in
+# inventory.csv, and then deducts values
     df_to_list= pd.DataFrame(df).index.tolist()
     for i in formula:
         if i in df_to_list:
