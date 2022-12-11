@@ -39,7 +39,7 @@ def display_herbs():
     print('--------------')
     print('Full Inventory')
     print('--------------')
-    print(df)
+    print(df.to_string (index=False))
     print('')
 
 def display_low_herbs():
@@ -53,8 +53,6 @@ def display_low_herbs():
     df= pd.read_csv('inventory.csv')
     low_herbs = df[(df['Grams'] < 100)]
     print(low_herbs.to_string (index=False))
-    # print(df.to_string(index=False))
-    # print (low_herbs)
     print ('')
     print ('')
 
@@ -70,6 +68,7 @@ def update_herbs():
             new_grams= input("Enter updated grams: ")
             df.loc [herb_to_change, 'Grams'] = new_grams
             df.to_csv("inventory.csv")
+            print(f"{herb_to_change} updated to {new_grams} grams.")
         elif herb_to_change == '5':
             break
         else:
