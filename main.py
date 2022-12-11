@@ -4,6 +4,7 @@ import formulas
 clear = lambda: os.system('cls')
 
 
+
 def menu():
     clear()
     print("============= Dispensary Manager ============")
@@ -63,12 +64,15 @@ def update_herbs():
         df_to_list= pd.DataFrame(df).index.tolist()
         
         herb_to_change= input("Herb to update: ")
+        herb_to_change= herb_to_change.capitalize()
         
         if herb_to_change in df_to_list:
             new_grams= input("Enter updated grams: ")
             df.loc [herb_to_change, 'Grams'] = new_grams
             df.to_csv("inventory.csv")
-            print(f"{herb_to_change} updated to {new_grams} grams.")
+            print ('')
+            print(f"{herb_to_change.capitalize()} updated to {new_grams} grams.")
+            print ('')
         elif herb_to_change == '5':
             break
         else:
