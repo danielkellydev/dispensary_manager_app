@@ -5,7 +5,6 @@ import functions
 clear = lambda: os.system('cls')
 
 
-
 def menu():
     clear()
     print("============= Dispensary Manager ============")
@@ -92,7 +91,7 @@ def prescribe():
     print("5) Ling Gui Zhu Gan Tang")
     print("6) Shen Zhuo Tang")
     print("7) Da Xuan Wu Tang")
-    print("Enter Your Choice :- ")
+    print("Formula to prescribe :- ")
 
     try: 
         n = int(input())

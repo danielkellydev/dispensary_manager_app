@@ -1,56 +1,56 @@
 
 
 lzw= {
-    'bai zhu': 9,
-    'gan jiang': 9,
-    'zhi gan cao': 9,
-    'ren shen': 9
+    'Bai zhu': 9,
+    'Gan jiang': 9,
+    'Zhi gan cao': 9,
+    'Ren shen': 9
 }
 
 bxxxt= {
-    'huang qin': 9,
-    'huang lian': 9,
-    'gan jiang': 9,
-    'ban xia': 12,
-    'ren shen': 9,
-    'zhi gan cao': 9,
-    'da zao': 9
+    'Huang qin': 9,
+    'Huang lian': 9,
+    'Gan jiang': 9,
+    'Ban xia': 12,
+    'Ren shen': 9,
+    'Zhi gan cao': 9,
+    'Da zao': 9
 }
 
 zwt= {
-    'bai zhu': 9,
-    'fu ling': 9,
-    'bai shao': 9,
-    'fu zi': 3,
+    'Bai zhu': 9,
+    'Fu ling': 9,
+    'Bai shao': 9,
+    'Fu zi': 3,
 }
 
 fzt= {
-    'fu zi': 9,
-    'bai shao': 9,
-    'fu ling': 9,
-    'bai zhu': 9,
-    'ren shen':9
+    'Fu zi': 9,
+    'Bai shao': 9,
+    'Fu ling': 9,
+    'Bai zhu': 9,
+    'Ren shen':9
 }
 
 lgzgt= {
-    'bai zhu': 12,
-    'fu ling': 12,
-    'gui zhi': 9,
-    'zhi gan cao': 6
+    'Bai zhu': 12,
+    'Fu ling': 12,
+    'Gui zhi': 9,
+    'Zhi gan cao': 6
 }
 
 szt= {
-    'gan jiang': 12,
-    'fu ling': 6,
-    'bai zhu': 3,
-    'zhi gan cao': 3
+    'Gan jiang': 12,
+    'Fu ling': 6,
+    'Bai zhu': 3,
+    'Zhi gan cao': 3
 }
 
 dxwt= {
-    'fu zi': 9,
-    'bai shao': 9,
-    'fu ling': 9,
-    'bai zhu': 9,
-    'ren shen':9,
-    'gan jiang': 9,
+    'Fu zi': 9,
+    'Bai shao': 9,
+    'Fu ling': 9,
+    'Bai zhu': 9,
+    'Ren shen':9,
+    'Gan jiang': 9,
 }
