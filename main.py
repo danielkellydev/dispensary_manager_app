@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import formulas
+import functions
 clear = lambda: os.system('cls')
 
 
@@ -95,24 +96,27 @@ def prescribe():
 
     try: 
         n = int(input())
-        for i in formula:
-            for j in df:
-                if j < i:
-                    print (f"Not enough {formula[i]}")
         if (n == 1):
             formula= formulas.lzw
+            functions.formula_confirm('Li zhong wan')
         elif(n == 2):
             formula= formulas.bxxxt
+            functions.formula_confirm('Ban xia xie xin tang')
         elif(n == 3):
             formula= formulas.zwt
+            functions.formula_confirm('Zhen wu tang')
         elif(n == 4):
             formula= formulas.fzt
+            functions.formula_confirm('Fu zi tang')
         elif (n == 5):
             formula= formulas.lgzgt
+            functions.formula_confirm('Ling gui zhu gan tang')
         elif (n == 6):
             formula= formulas.szt
+            functions.formula_confirm('Shen zhuo tang')
         elif (n == 7):
             formula= formulas.dxwt
+            functions.formula_confirm('Da xuan wu tang')
         else:
             print ('')                  
             print("--------------------------------")
@@ -125,6 +129,10 @@ def prescribe():
             print("Invalid Choice, please try again.")
             print("--------------------------------")
             print('')
+    
+    print ('')
+    print ('')
+    
 
 
     df_to_list= pd.DataFrame(df).index.tolist()
