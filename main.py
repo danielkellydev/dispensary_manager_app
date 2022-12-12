@@ -35,7 +35,7 @@ def menu():
 # function to print full inventory from csv file
 def display_herbs():
     clear()
-    df= pd.read_csv('terminal_app_assig\inventory.csv')
+    df= pd.read_csv('./inventory.csv')
     print('')
     print('')
     print('--------------')
@@ -54,7 +54,7 @@ def display_low_herbs():
     print ('')
     
     #uses pandas to read csv file, then recognises any herbs below 100 
-    df= pd.read_csv('terminal_app_assig\inventory.csv')
+    df= pd.read_csv('./inventory.csv')
     low_herbs = df[(df['Grams'] < 100)]
     # if the dataframe is empty, a friendly message is displayed (as opposed to default empty dataframe message)
     if low_herbs.empty:
@@ -69,10 +69,11 @@ def display_low_herbs():
 # function to edit grams value of herbs in csv file
 def update_herbs():
     clear()
+    print('Main Menu (5)')
+    print('')
     while True:
-        display_herbs()
         # using pandas to read csv
-        df = pd.read_csv('terminal_app_assig\inventory.csv', index_col='Herb')
+        df = pd.read_csv('./inventory.csv', index_col='Herb')
         # transpose csv data into a pandas DataFrame, then into a list
         df_to_list= pd.DataFrame(df).index.tolist()
         
@@ -83,7 +84,7 @@ def update_herbs():
         if herb_to_change in df_to_list:
             new_grams= input("Enter updated grams: ")
             df.loc [herb_to_change, 'Grams'] = new_grams
-            df.to_csv("terminal_app_assig\inventory.csv")
+            df.to_csv("./inventory.csv")
             print ('')
             print(f"{herb_to_change.capitalize()} updated to {new_grams} grams.")
             print ('')
@@ -95,7 +96,7 @@ def update_herbs():
         
     #    function to prescribe herbal formulas
 def prescribe():
-    df = pd.read_csv('inventory.csv', index_col='Herb')
+    df = pd.read_csv('./inventory.csv', index_col='Herb')
     formula = ''
     clear()
     print("1) Li Zhong Wan")
@@ -153,7 +154,7 @@ def prescribe():
     for i in formula:
         if i in df_to_list:
             df.loc [i, 'Grams'] = (df.loc [i, 'Grams']) - (formula[i])
-            df.to_csv("inventory.csv")
+            df.to_csv("./inventory.csv")
 
 clear()
 menu()
