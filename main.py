@@ -18,19 +18,26 @@ def menu():
         print('')
         print("Enter Your Choice :- ")
 
-        n = int(input())
-        if (n == 1):
-            display_herbs()
-        elif(n == 2):
-            display_low_herbs()
-        elif(n == 3):
-            update_herbs()
-        elif(n == 4):
-            prescribe()
-        elif (n == 5):
-            break
-        else:
-            print("Invalid Choice, please try again")
+        try:
+            n = int(input())
+            if (n == 1):
+                display_herbs()
+            elif(n == 2):
+                display_low_herbs()
+            elif(n == 3):
+                update_herbs()
+            elif(n == 4):
+                prescribe()
+            elif (n == 5):
+                break
+            else:
+                print("Invalid Choice, please try again")
+        except ValueError:
+            print ('')                  
+            print("--------------------------------")
+            print("Invalid Choice, please try again.")
+            print("--------------------------------")
+            print('')
 
 # function to print full inventory from csv file
 def display_herbs():
@@ -148,7 +155,7 @@ def prescribe():
     print ('')
     
 
-# this code takes the values of individual herbs within prescribed formula, check them against same herb names in
+# this code takes the values of individual herbs within prescribed formula, checks them against same herb names in
 # inventory.csv, and then deducts values
     df_to_list= pd.DataFrame(df).index.tolist()
     for i in formula:
