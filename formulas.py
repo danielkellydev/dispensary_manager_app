@@ -9,7 +9,7 @@ lzw= {
 
 bxxxt= {
     'Huang qin': 9,
-    'Huang lian': 9,
+    'Huang lian': 3,
     'Gan jiang': 9,
     'Ban xia': 12,
     'Ren shen': 9,

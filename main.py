@@ -66,7 +66,7 @@ def display_low_herbs():
         print ('')
         print ('')
 
-# function to edit grammage value of herbs in csv file
+# function to edit grams value of herbs in csv file
 def update_herbs():
     clear()
     while True:
