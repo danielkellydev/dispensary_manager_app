@@ -97,6 +97,7 @@ def update_herbs():
             print(f"{herb_to_change.capitalize()} updated to {new_grams} grams.")
             print ('')
         elif herb_to_change == '5':
+            clear()
             break
         else:
             print("Incorrect input!")
@@ -120,33 +121,25 @@ def prescribe():
         n = int(input())
         if (n == 1):
             formula= formulas.lzw
-            global formula_name
             formula_name = 'Li Zhong Wan'
-            #functions.formula_confirm('Li zhong wan')
         elif(n == 2):
             formula= formulas.bxxxt
             formula_name = 'Ban Xie Xie Xin Tang'
-            #functions.formula_confirm('Ban xia xie xin tang')
         elif(n == 3):
             formula= formulas.zwt
             formula_name = 'Zhen Wu Tang'
-            #functions.formula_confirm('Zhen wu tang')
         elif(n == 4):
             formula= formulas.fzt
             formula_name = 'Fu Zi Tang'
-            # functions.formula_confirm('Fu zi tang')
         elif (n == 5):
             formula= formulas.lgzgt
             formula_name = 'Ling Gui Zhu Gan Tang'
-            # functions.formula_confirm('Ling gui zhu gan tang')
         elif (n == 6):
             formula= formulas.szt
             formula_name = 'Shen Zhuo Tang'
-            # functions.formula_confirm('Shen zhuo tang')
         elif (n == 7):
             formula= formulas.dxwt
             formula_name = 'Da Xuan Wu Tang'
-            # functions.formula_confirm('Da xuan wu tang')
         else:
             print ('')                  
             print("--------------------------------")
@@ -166,20 +159,25 @@ def prescribe():
 
 # this code takes the values of individual herbs within prescribed formula, checks them against same herb names in
 # inventory.csv, and then deducts values
+    count= 0
     df_to_list= pd.DataFrame(df).index.tolist()
     for i in formula:
         if i in df_to_list:
             if (df.loc [i, 'Grams']) < (formula[i]):
+                clear()
                 print ("Herb stocks are too low to prescribe that formula, please check low stock items and restock as needed.")
                 print ('')
                 break
             else:
+                formula_length= len(formula)
                 df.loc [i, 'Grams'] = (df.loc [i, 'Grams']) - (formula[i])
-                df.to_csv("./inventory.csv")
-                print ('-------------------------------')
-                print (f"{formula_name} successfully prescribed")
-                print ('-------------------------------')
-                print ('')
+                df.to_csv('./inventory.csv')
+                count += 1
+                # used a counter to only display confirmation message once all herbs in a formula are complete
+                if count == formula_length:
+                    clear()
+                    print (f'{formula_name} successfully prescribed')
+                    print ('')
 
 clear()
 menu()
