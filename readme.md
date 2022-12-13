@@ -94,11 +94,11 @@ Hit Enter. A confirmation will be given. This feature will keep running until yo
 
 You will be presented with the formula list to choose from, simply use the number index to select which formula you're prescribing. 
 
-![formula-menu](docs\formulas.jpg)
+![formula-menu](docs/formulas.jpg)
 
 You will then receive a confirmation message. 
 
-![formula-menu](docs\updateherbs4.jpg)
+![formula-menu](docs/updateherbs4.jpg)
 
 
 When finished with the program, use command 5 to exit app. 
