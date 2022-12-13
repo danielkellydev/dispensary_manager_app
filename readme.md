@@ -33,9 +33,9 @@ https://app.asana.com/0/1203497138825323/list
 
 <br>
 
-![asana image1](/terminal_app_assig/docs/asana1.jpg)<br>
-![asana image2](/terminal_app_assig/docs/asana2.jpg)<br>
-![asana image3](/terminal_app_assig/docs/asana4calendar.jpg)
+![asana image1](docs/asana1.jpg)<br>
+![asana image2](docs/asana2.jpg)<br>
+![asana image3](docs/asana4calendar.jpg)
 
 
 ## Operating Instructions
@@ -46,7 +46,7 @@ Ensure terminal is in correct directory, then use the command `./run.sh` to star
 ### *Menu*
 The menu is navigated by entering the number index values. 
 
-![menu](/terminal_app_assig\docs\menu.jpg)
+![menu](docs/menu.jpg)
 
 For example, enter `1` and press Enter to Display full dispensary inventory. 
 
@@ -59,13 +59,13 @@ For example, enter `1` and press Enter to Display full dispensary inventory.
 ### *2) Display low stock items*
 Not much instruction is needed for the first two options. Once these options are called, they simply display the requested data. To exit, press 5 and then Enter. 
 
-![inventory_image](/terminal_app_assig\docs\inventory.jpg)
+![inventory_image](docs/inventory.jpg)
 
-![low_stock_image](/terminal_app_assig\docs\lowstockitems.jpg)
+![low_stock_image](docs/lowstockitems.jpg)
 
 If there are no low stock herbs in the inventory, the app will indicate this by letting you know 'You're all stocked up!' 
 
-![low_stock_image](/terminal_app_assig\docs\lowstockitems2.jpg)
+![low_stock_image](docs/lowstockitems2.jpg)
 
 
 
@@ -73,19 +73,19 @@ If there are no low stock herbs in the inventory, the app will indicate this by 
 
 When this feature opens, first enter the specific herb you would like to update. It doesn't matter which case you use ie. upper/lowercase, as the app will adjust cases automatically. Ensure to enter the correct spelling, and don't add any extra spaces onto the end of herb names. 
 
-![update_herbs_image](/terminal_app_assig\docs\updateherbs.jpg)
+![update_herbs_image](docs/updateherbs.jpg)
 
 Hit Enter, and then enter the updated number of grams for the given herb. Enter numbers only. 
 <br>
 
 
-![update_herbs_image](/terminal_app_assig\docs\updateherbs2.jpg)
+![update_herbs_image](docs/updateherbs2.jpg)
 
 Hit Enter. A confirmation will be given. This feature will keep running until you go back to Main Menu, by entering command '5'. 
 
 <br>
 
-![update_herbs_image](/terminal_app_assig\docs\updateherbs3.jpg)
+![update_herbs_image](docs/updateherbs3.jpg)
 
 
 
@@ -94,11 +94,11 @@ Hit Enter. A confirmation will be given. This feature will keep running until yo
 
 You will be presented with the formula list to choose from, simply use the number index to select which formula you're prescribing. 
 
-![formula-menu](/terminal_app_assig\docs\formulas.jpg)
+![formula-menu](docs\formulas.jpg)
 
 You will then receive a confirmation message. 
 
-![formula-menu](/terminal_app_assig\docs\updateherbs4.jpg)
+![formula-menu](docs\updateherbs4.jpg)
 
 
 When finished with the program, use command 5 to exit app. 
