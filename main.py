@@ -179,5 +179,4 @@ def prescribe():
                     print (f'{formula_name} successfully prescribed')
                     print ('')
 
-clear()
 menu()

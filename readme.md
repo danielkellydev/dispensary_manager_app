@@ -33,9 +33,9 @@ https://app.asana.com/0/1203497138825323/list
 
 <br>
 
-![asana image1](/terminal_app_assig\docs\asana1.jpg)<br>
-![asana image2](/terminal_app_assig\docs\asana2.jpg)<br>
-![asana image3](/terminal_app_assig\docs\asana4calendar.jpg)
+![asana image1](/terminal_app_assig/docs/asana1.jpg)<br>
+![asana image2](/terminal_app_assig/docs/asana2.jpg)<br>
+![asana image3](/terminal_app_assig/docs/asana4calendar.jpg)
 
 
 ## Operating Instructions
