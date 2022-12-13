@@ -18,6 +18,7 @@ def menu():
         print('')
         print("Enter Your Choice :- ")
 
+        # error handling in case a non-integer is inputted
         try:
             n = int(input())
             if (n == 1):
@@ -119,25 +120,33 @@ def prescribe():
         n = int(input())
         if (n == 1):
             formula= formulas.lzw
-            functions.formula_confirm('Li zhong wan')
+            global formula_name
+            formula_name = 'Li Zhong Wan'
+            #functions.formula_confirm('Li zhong wan')
         elif(n == 2):
             formula= formulas.bxxxt
-            functions.formula_confirm('Ban xia xie xin tang')
+            formula_name = 'Ban Xie Xie Xin Tang'
+            #functions.formula_confirm('Ban xia xie xin tang')
         elif(n == 3):
             formula= formulas.zwt
-            functions.formula_confirm('Zhen wu tang')
+            formula_name = 'Zhen Wu Tang'
+            #functions.formula_confirm('Zhen wu tang')
         elif(n == 4):
             formula= formulas.fzt
-            functions.formula_confirm('Fu zi tang')
+            formula_name = 'Fu Zi Tang'
+            # functions.formula_confirm('Fu zi tang')
         elif (n == 5):
             formula= formulas.lgzgt
-            functions.formula_confirm('Ling gui zhu gan tang')
+            formula_name = 'Ling Gui Zhu Gan Tang'
+            # functions.formula_confirm('Ling gui zhu gan tang')
         elif (n == 6):
             formula= formulas.szt
-            functions.formula_confirm('Shen zhuo tang')
+            formula_name = 'Shen Zhuo Tang'
+            # functions.formula_confirm('Shen zhuo tang')
         elif (n == 7):
             formula= formulas.dxwt
-            functions.formula_confirm('Da xuan wu tang')
+            formula_name = 'Da Xuan Wu Tang'
+            # functions.formula_confirm('Da xuan wu tang')
         else:
             print ('')                  
             print("--------------------------------")
@@ -160,8 +169,17 @@ def prescribe():
     df_to_list= pd.DataFrame(df).index.tolist()
     for i in formula:
         if i in df_to_list:
-            df.loc [i, 'Grams'] = (df.loc [i, 'Grams']) - (formula[i])
-            df.to_csv("./inventory.csv")
+            if (df.loc [i, 'Grams']) < (formula[i]):
+                print ("Herb stocks are too low to prescribe that formula, please check low stock items and restock as needed.")
+                print ('')
+                break
+            else:
+                df.loc [i, 'Grams'] = (df.loc [i, 'Grams']) - (formula[i])
+                df.to_csv("./inventory.csv")
+                print ('-------------------------------')
+                print (f"{formula_name} successfully prescribed")
+                print ('-------------------------------')
+                print ('')
 
 clear()
 menu()

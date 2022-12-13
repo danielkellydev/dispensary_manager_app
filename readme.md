@@ -7,6 +7,10 @@ Repository Link: https://github.com/danielkellydev/dispensary_manager
 
 Display Manager is an application to assist herbalists in managing their herbal dispensary. At this point in time, there is included a small dispensary of 12 herbs, though in later versions there will be a feature to add new herbs to the dispensary. 
 
+## *Style Conventions*
+
+- Single quotation marks
+
 ## App Features
 <br>
 

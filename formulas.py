@@ -1,4 +1,12 @@
-
+formula_full_names = {
+    'lzw': 'Li Zhong Wan',
+    'bxxxt': 'Ban Xie Xie Xin Tang',
+    'zwt': 'Zhen Wu Tang',
+    'fzt': 'Fu Zi Tang',
+    'lgzgt': 'Ling Gui Zhu Gan Tang',
+    'szt': 'Shen Zhuo Tang',
+    'dxwt': 'Da Xuan Wu Tang'
+}
 
 lzw= {
     'Bai zhu': 9,
