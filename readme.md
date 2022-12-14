@@ -105,6 +105,39 @@ When finished with the program, use command 5 to exit app.
 <br>
 <br>
 
+## ***Manual Tests***
+
+### ***Manual Test 1***
+*To test that when a formula is prescribed, the correct values are being deducted from inventory.csv*
+1.	Run main.py
+2.	From menu, run option 1) to Display full dispensary inventory
+3.	Record the current numerical values for the following herbs:
+Bai zhu, zhi gan cao, gan jiang & ren shen
+4.	Now from the menu, run option 4) to Prescribe formula
+5.	From the formula menu, run option 1) Li Zhong Wan
+6.	You will receive confirmation “Li Zhong Wan successfully prescribed”
+7.	Now from the menu, for a second time, run option 1) to Display full dispensary inventory
+8. Check values of Bai zhu, zhi gan cao, gan jiang & ren shen
+9.	All of these values will have reduced by a factor of 9
+
+<br>
+
+### ***Manual Test 2***
+
+*To test that when individual herb stock is under value of 100, it will be displayed in the ‘Display low stock items’ function.*
+1.	Run main.py
+2.	From menu, run option 2) to Display low stock items
+3.	At this point, the herbs are all well stocked, and hence you’ll only receive the message ‘You’re all stocked up!’
+4.	Next, run menu option 3) to Update herb inventory
+5.	When prompted with ‘Herb to Update’: Type in ‘fu ling’, press Enter
+6.	Type in 50 and press Enter, after which confirmation will be received
+7.	Next, go back to Main Menu by entering '5' and then Enter
+8.	From the Main Menu, run menu option 2) to Display low stock items
+9.	Fu ling will now be displayed under Low Stock Items
+
+<br>
+
+
 ## *References*
 
 <br>

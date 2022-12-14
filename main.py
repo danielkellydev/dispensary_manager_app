@@ -1,7 +1,6 @@
 import pandas as pd
 import os
 import formulas
-import functions
 clear = lambda: os.system('cls')
 
 # function for displaying menu
@@ -108,6 +107,11 @@ def prescribe():
     df = pd.read_csv('./inventory.csv', index_col='Herb')
     formula = ''
     clear()
+    print('')
+    print('------------')
+    print('Formula Menu')
+    print('------------')
+    print('')
     print("1) Li Zhong Wan")
     print("2) Ban Xia Xie Xin Tang")
     print("3) Zhen Wu Tang")
